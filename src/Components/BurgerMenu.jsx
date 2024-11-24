@@ -1,30 +1,19 @@
-export default function BurgerMenu(props) {
+import {useEffect} from "react";
 
-    let menuOpen = false;
-    const animateBurger = () => {
-        menuOpen = !menuOpen;
+export default function BurgerMenu({props}) {
 
-        const burgerBar1 = document.getElementById('burger-bar-1');
-        const burgerBar2 = document.getElementById('burger-bar-2');
-        const burgerBar3 = document.getElementById('burger-bar-3');
+    // useEffect(()=>{
+    //     animateBurger()
+    //     props.handleChange()
+    // },[props.menuIsOpen]);
 
-        burgerBar1.classList.toggle('-rotate-45');
-        burgerBar1.classList.toggle('absolute');
-
-        burgerBar2.classList.toggle('opacity-0');
-
-        burgerBar3.classList.toggle('rotate-45');
-        burgerBar3.classList.toggle('absolute');
-
-        props.handleChange(menuOpen)
-
-    };
+    const logger = () => {
+        console.log(props)
+    }
 
     return (
         <>
-            <div className='z-10 group md:hidden flex flex-col w-2/12 justify-center relative cursor-pointer'
-                 onClick={event => animateBurger(event)}
-            >
+            <div className='z-10 group md:hidden flex flex-col w-2/12 justify-center items-center relative cursor-pointer'>
                 <div
                     id='burger-bar-1'
                     className='w-1/2 bg-white h-1 origin-center transition-all ease-in-out duration-500'></div>

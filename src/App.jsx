@@ -1,24 +1,24 @@
 import NavBar from "./Components/NavBar.jsx";
 import Footer from "./Components/Footer.jsx";
-import ContentContainer from "./Components/ContentContainer.jsx";
-import Page from "./Components/Page.jsx";
-
-const navItems = [
-    'Home',
-    'About',
-    'Contact'
-]
-
-const footerName = 'Stock Footer'
+import VideoPage from "./Components/VideoPage.jsx";
 
 function App() {
 
     return (
         <>
-            <div className='flex flex-col h-screen'>
-                <NavBar items={navItems}/>
-                <Page props={{ title : 'Page 1'}}/>
-                {/*<ContentContainer />*/}
+            <div className='flex flex-col'>
+                <NavBar
+                    primary='green-500'
+                    secondary='purple-500'
+                    tertiary='blue-500'
+                    items={[
+                        'Home',
+                        'About',
+                        'Affiliates',
+                        'Contact'
+                    ]}
+                />
+                <VideoPage />
                 <Footer/>
             </div>
         </>
